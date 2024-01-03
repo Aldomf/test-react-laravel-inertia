@@ -1,17 +1,18 @@
 import React from 'react';
-import Menu from '@/Components/Menu';
+import Header from '@/Components/Header';
+import Footer from '@/Components/Footer';
 
 const Layout = ({ children }) => {
   return (
     <div>
       {/* Your menu component here */}
-      <Menu/>
+      <Header/>
 
       {/* Page content */}
       {children}
 
       {/* Your footer component here */}
-      <p>fseses</p>
+      <Footer/>
     </div>
   );
 };

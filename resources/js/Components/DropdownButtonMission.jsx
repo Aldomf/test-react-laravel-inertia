@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { InertiaLink } from "@inertiajs/inertia-react"; // Import InertiaLink instead of Link
 
 const DropdownButtonMission = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -56,36 +56,36 @@ const DropdownButtonMission = () => {
         >
           <ul className="text-sm text-gray-700 dark:text-gray-200 flex flex-col">
             <li>
-              <Link
-                to="/nos-missions"
+              <InertiaLink // Use InertiaLink instead of Link
+                href="/nos-missions" // Set the href attribute for the InertiaLink
                 className="block text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 hover:rounded-t-lg dark:hover:text-white hover:text-[#A4195C]"
               >
                 Nos missions
-              </Link>
+              </InertiaLink>
             </li>
             <li>
-              <Link
-                to="/nos-communes"
+              <InertiaLink // Use InertiaLink instead of Link
+                href="/nos-communes" // Set the href attribute for the InertiaLink
                 className="block text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white hover:text-[#A4195C]"
               >
                 Nos communes
-              </Link>
+              </InertiaLink>
             </li>
             <li>
-              <Link
-                to="/gouvernance"
+              <InertiaLink // Use InertiaLink instead of Link
+                href="/gouvernance" // Set the href attribute for the InertiaLink
                 className="block text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white hover:text-[#A4195C]"
               >
                 La gouvernance
-              </Link>
+              </InertiaLink>
             </li>
             <li>
-              <Link
-                to="/equipe"
+              <InertiaLink // Use InertiaLink instead of Link
+                href="/equipe" // Set the href attribute for the InertiaLink
                 className="block text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 hover:rounded-b-lg dark:hover:text-white hover:text-[#A4195C]"
               >
                 Notre équipe
-              </Link>
+              </InertiaLink>
             </li>
           </ul>
         </div>
@@ -95,3 +95,4 @@ const DropdownButtonMission = () => {
 };
 
 export default DropdownButtonMission;
+

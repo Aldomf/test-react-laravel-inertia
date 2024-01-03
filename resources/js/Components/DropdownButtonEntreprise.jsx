@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { InertiaLink } from "@inertiajs/inertia-react"; // Import InertiaLink instead of Link
 
 function DropdownButtonEntreprise() {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -56,28 +56,28 @@ function DropdownButtonEntreprise() {
         >
           <ul className="text-sm text-gray-700 dark:text-gray-200 flex flex-col">
             <li>
-              <Link
-                to="/expertise"
+              <InertiaLink // Use InertiaLink instead of Link
+                href="/expertise" // Set the href attribute for the InertiaLink
                 className="block text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 hover:rounded-t-lg dark:hover:text-white hover:text-[#F29100]"
               >
                 Notre expertise
-              </Link>
+              </InertiaLink>
             </li>
             <li>
-              <Link
-                to="/demarche-rse"
+              <InertiaLink // Use InertiaLink instead of Link
+                href="/demarche-rse" // Set the href attribute for the InertiaLink
                 className="block text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white hover:text-[#F29100]"
               >
                 S'engager dans une démarche RSE
-              </Link>
+              </InertiaLink>
             </li>
             <li>
-              <Link
-                to="/taxe-apprentissage"
+              <InertiaLink // Use InertiaLink instead of Link
+                href="/taxe-apprentissage" // Set the href attribute for the InertiaLink
                 className="block text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 hover:rounded-b-lg dark:hover:text-white hover:text-[#F29100]"
               >
                 Taxe d'apprentissage
-              </Link>
+              </InertiaLink>
             </li>
           </ul>
         </div>
@@ -87,3 +87,4 @@ function DropdownButtonEntreprise() {
 }
 
 export default DropdownButtonEntreprise;
+

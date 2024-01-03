@@ -1,18 +1,18 @@
 import { FaLinkedinIn, FaFacebookF, FaInstagram } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { InertiaLink } from "@inertiajs/inertia-react";
 
 function Footer() {
   return (
     <>
       <div className="bg-[#252323] px-8 pb-8 pt-8 md:flex">
         <div className="md:w-[30%]">
-          <Link to="" onClick={() => window.scrollTo(0, 0)}>
+          <InertiaLink href="/" onClick={() => window.scrollTo(0, 0)}>
             <img
-              src="/public/logo1.png"
+              src="/logo1.png"
               alt=""
               className="bg-white rounded-lg mb-6"
             />
-          </Link>
+          </InertiaLink>
           <p className="text-white text-xs">
             LA MISSION LOCALE DES MUREAUX ACCOMPAGNE LES JEUNES DE 16 À 25 ANS
             DANS LA RECHERCHE D&apos;EMPLOI, DE FORMATION OU D&apos;ALTERNANCE{" "}
@@ -21,19 +21,48 @@ function Footer() {
         <div className="md:w-[20%] md:flex md:flex-col md:items-center">
           <h2 className="text-white mt-6 font-bold md:mb-4">ACCÈS RAPIDE</h2>
           <p className="text-white text-xs">
-            <Link
-              to=""
+            <InertiaLink
+              href="/"
               className="cursor-pointer"
               onClick={() => window.scrollTo(0, 0)}
             >
               LA MISSION LOCALE
-            </Link>
+            </InertiaLink>
             <br />
-            <Link to="/se-former" onClick={() => window.scrollTo(0, 0)}>SERVICES</Link> <br />
-            <Link to="/actualites" onClick={() => window.scrollTo(0, 0)}>ACTUALITÉS</Link> <br />
-            <Link to="/ateliers" onClick={() => window.scrollTo(0, 0)}>ATELIERS</Link> <br />
-            <Link to="/connexion-entreprise" onClick={() => window.scrollTo(0, 0)}>ENTREPRISES</Link> <br />
-            <Link to="/connexion-jeune" onClick={() => window.scrollTo(0, 0)}>JEUNES</Link>
+            <InertiaLink
+              href="/se-former"
+              onClick={() => window.scrollTo(0, 0)}
+            >
+              SERVICES
+            </InertiaLink>{" "}
+            <br />
+            <InertiaLink
+              href="/actualites"
+              onClick={() => window.scrollTo(0, 0)}
+            >
+              ACTUALITÉS
+            </InertiaLink>{" "}
+            <br />
+            <InertiaLink
+              href="/ateliers"
+              onClick={() => window.scrollTo(0, 0)}
+            >
+              ATELIERS
+            </InertiaLink>{" "}
+            <br />
+            <InertiaLink
+              href="/connexion-entreprise"
+              onClick={() => window.scrollTo(0, 0)}
+            >
+              ENTREPRISES
+            </InertiaLink>{" "}
+            <br />
+            <InertiaLink
+              href="/connexion-jeune"
+              onClick={() => window.scrollTo(0, 0)}
+            >
+              JEUNES
+            </InertiaLink>
           </p>
         </div>
         <div className="md:w-[20%] md:pr-4">
@@ -50,15 +79,15 @@ function Footer() {
           <div>
             <h2 className="flex items-center md:mb-2">
               NOUS SUIVRE:
-              <Link>
+              <InertiaLink href="#">
                 <FaLinkedinIn className=" text-white ml-2" />
-              </Link>
-              <Link>
+              </InertiaLink>
+              <InertiaLink href="#">
                 <FaFacebookF className=" text-white ml-2" />
-              </Link>
-              <Link>
+              </InertiaLink>
+              <InertiaLink href="#">
                 <FaInstagram className=" text-white ml-2" />
-              </Link>
+              </InertiaLink>
             </h2>
           </div>
           <h2 className="md:mb-2">NOUS CONTACTER</h2>
@@ -83,3 +112,4 @@ function Footer() {
 }
 
 export default Footer;
+

@@ -10,13 +10,11 @@ function Accueil() {
     return (
         <>
             <Head title="Accueil" />
-            <Layout>
                 <SlideMenu />
                 <Actualites />
                 <Youtube />
                 <Statistiques />
                 <Soutien />
-            </Layout>
         </>
     );
 }

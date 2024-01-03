@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { InertiaLink } from "@inertiajs/inertia-react"; // Import InertiaLink instead of Link
 import { FaUser } from "react-icons/fa";
 
 function DropdownButtonConnexionMo() {
@@ -47,22 +47,22 @@ function DropdownButtonConnexionMo() {
         >
           <ul className="text-sm text-white bg-[#252323] flex flex-col items-start">
             <li>
-              <Link
-                to="/connexion-jeune"
+              <InertiaLink // Use InertiaLink instead of Link
+                href="/connexion-jeune" // Set the href attribute for the InertiaLink
                 className="block text-left px-4 py-2 hover:bg-[#A4195C] dark:hover:bg-gray-600 dark:hover:text-white"
                 onClick={handleLinkClick}
               >
                 Espace Jeune
-              </Link>
+              </InertiaLink>
             </li>
             <li>
-              <Link
-                to="/connexion-entreprise"
+              <InertiaLink // Use InertiaLink instead of Link
+                href="/connexion-entreprise" // Set the href attribute for the InertiaLink
                 className="block text-left px-4 py-2 hover:bg-[#F39101] dark:hover:bg-gray-600 dark:hover:text-white"
                 onClick={handleLinkClick}
               >
                 Espace Entreprise
-              </Link>
+              </InertiaLink>
             </li>
           </ul>
         </div>
@@ -72,6 +72,7 @@ function DropdownButtonConnexionMo() {
 }
 
 export default DropdownButtonConnexionMo;
+
 
 
 

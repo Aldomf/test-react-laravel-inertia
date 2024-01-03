@@ -5,6 +5,9 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
+// Pour le back
+use App\Http\Controllers\FrontController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,15 +19,51 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {
-    return Inertia::render('Accueil', [
+// Route::get('/', function () {
+//     return Inertia::render('Accueil', [
         
-    ]);
+//     ]);
+// });
+
+// Route::get('/nos-missions', function () {
+//     return Inertia::render('NosMissions');
+// })->name('nosMissions');
+
+Route::controller(FrontController::class)->group(function () {
+    Route::get('/','Accueil')->name('home');
+
+    //Missions
+    Route::get('/nos-missions','nosmissions')->name('nosmissions');
+    Route::get('/nos-communes','noscommunes')->name('noscommunes');
+    Route::get('/gouvernance','gouvernance')->name('gouvernance');
+    Route::get('/equipe','equipe')->name('equipe');
+
+    //Services
+    Route::get('/se-former','seformer')->name('seformer');
+    Route::get('/sorienter','orienter')->name('orienter');
+    Route::get('/trouver-un-emploi','TrouverUnEmploi')->name('trouverUnEmploi');
+    Route::get('/etre-accompagne','etreAccompagne')->name('etreAccompagne');
+   
+    //Actualites
+    Route::get('/actualites','actualite')->name('actualite');
+    Route::get('/actualites/{id}','uneactualite')->name('actualiteDetail');
+
+    //Atelier
+    Route::get('/ateliers','ateliers')->name('ateliers');
+    Route::get('/ateliers/{id}','unatelier')->name('atelierDetail');
 });
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+
+
+
+
+
+
+
+
+
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

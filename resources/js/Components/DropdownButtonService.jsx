@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { InertiaLink } from "@inertiajs/inertia-react"; // Import InertiaLink instead of Link
 
 function DropdownButtonService() {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -56,36 +56,36 @@ function DropdownButtonService() {
         >
           <ul className="text-sm text-gray-700 dark:text-gray-200 flex flex-col">
             <li>
-              <Link
-                to="/se-former"
+              <InertiaLink // Use InertiaLink instead of Link
+                href="/se-former" // Set the href attribute for the InertiaLink
                 className="block text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 hover:rounded-t-lg dark:hover:text-white hover:text-[#D60B51]"
               >
                 Se former
-              </Link>
+              </InertiaLink>
             </li>
             <li>
-              <Link
-                to="/sorienter"
+              <InertiaLink // Use InertiaLink instead of Link
+                href="/sorienter" // Set the href attribute for the InertiaLink
                 className="block text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white hover:text-[#D60B51]"
               >
                 S'orienter
-              </Link>
+              </InertiaLink>
             </li>
             <li>
-              <Link
-                to="/trouver-un-emploi"
+              <InertiaLink // Use InertiaLink instead of Link
+                href="/trouver-un-emploi" // Set the href attribute for the InertiaLink
                 className="block text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white hover:text-[#D60B51]"
               >
                 Trouver un emploi
-              </Link>
+              </InertiaLink>
             </li>
             <li>
-              <Link
-                to="/etre-accompagne"
+              <InertiaLink // Use InertiaLink instead of Link
+                href="/etre-accompagne" // Set the href attribute for the InertiaLink
                 className="block text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 hover:rounded-b-lg dark:hover:text-white hover:text-[#D60B51]"
               >
                 Etre accompagné
-              </Link>
+              </InertiaLink>
             </li>
           </ul>
         </div>
@@ -95,3 +95,4 @@ function DropdownButtonService() {
 }
 
 export default DropdownButtonService;
+
