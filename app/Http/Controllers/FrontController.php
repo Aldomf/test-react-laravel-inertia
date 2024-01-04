@@ -5,6 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
+use App\Models\Training;
+use App\Models\UserTraining;
+use App\Models\UserAtelier;
+use App\Models\User;
+use App\Models\Atelier;
+use App\Models\Joboffer;
+use App\Models\ConseillerJeune;
+use App\Models\Staff;
+use App\Models\News;
+use App\Models\PhotoGroupe;
+use App\Models\UserJoboffer;
+
 class FrontController extends Controller
 {
     public function Accueil()
@@ -105,4 +117,53 @@ class FrontController extends Controller
         ]);
     }
 
+    //Entreprise
+    public function notreexpertise()
+    {
+        return Inertia::render('Expertise');
+    }
+
+    public function taxeapprentissage()
+    {
+        return Inertia::render('TaxeApprentissage');
+    }
+
+    public function demarcheRSE()
+    {
+        return Inertia::render('DemarcheRse');
+    }
+
+    //Contact
+    public function contact()
+    {
+        return Inertia::render('Contact');
+    }
+
+    //Connexion
+    public function inscriptionjeune()
+    {
+        return Inertia::render('ConnexionJeune');
+    }
+
+    public function inscriptionentreprise()
+    {
+        return Inertia::render('ConnexionEntreprise'); 
+    }
+
+    //Formations
+    public function formation()
+    {
+        //$formations = Training::paginate(6);
+    
+        return Inertia::render('Formation', [ //'formations' => $formations
+         ]); // Assuming 'Formation' is the Inertia view file
+    }
+
+    public function formationDetail($id)
+    {
+        //$formation = Training::findOrFail($id);
+
+        return Inertia::render('Formations', [ //'formation' => $formation
+        ]); // Assuming 'FormationDetail' is the Inertia view file
+    }
 }

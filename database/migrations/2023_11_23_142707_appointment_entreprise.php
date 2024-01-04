@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('appointmentEntreprise', function (Blueprint $table) {
             $table->id();
-            $table->string('identifiant')->unique();
-            $table->string('password');
-            $table->boolean('actif')->default(true);
-            $table->enum('role', ['jeune', 'entreprise','manager','admin','superadmin']);
-            $table->rememberToken();
+            $table->foreignId('business_id')->constrained('users');
+            $table->foreignId('entreprise_id')->constrained('users');
+            $table->date('date');
+            $table->time('heure');
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('appointmentEntreprise');
     }
 };

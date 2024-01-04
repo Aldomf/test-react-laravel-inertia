@@ -11,13 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('photo_groupe', function (Blueprint $table) {
             $table->id();
-            $table->string('identifiant')->unique();
-            $table->string('password');
-            $table->boolean('actif')->default(true);
-            $table->enum('role', ['jeune', 'entreprise','manager','admin','superadmin']);
-            $table->rememberToken();
+            $table->string('image_path');
             $table->timestamps();
         });
     }
@@ -27,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('photo_groupe');
     }
 };

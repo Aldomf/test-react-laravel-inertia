@@ -51,6 +51,22 @@ Route::controller(FrontController::class)->group(function () {
     //Atelier
     Route::get('/ateliers','ateliers')->name('ateliers');
     Route::get('/ateliers/{id}','unatelier')->name('atelierDetail');
+
+    //Entreprise
+    Route::get('/expertise','notreexpertise')->name('notreexpertise');
+    Route::get('/taxe-apprentissage','taxeapprentissage')->name('taxeapprentissage');
+    Route::get('/demarche-rse','demarcheRSE')->name('demarcheRSE');
+
+    //Contact
+    Route::get('/contact','contact')->name('contact');
+
+    //Connexion
+    Route::get('/connexion-jeune','inscriptionjeune')->name('inscriptionjeune');
+    Route::get('/connexion-entreprise','inscriptionentreprise')->name('inscriptionentreprise');
+
+    //Formations
+    Route::get('/formations','formation')->name('formation');
+    Route::get('/formations/{id}','formationDetail')->name('formationDetail');
 });
 
 

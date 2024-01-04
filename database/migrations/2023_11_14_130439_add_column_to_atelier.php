@@ -11,14 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('identifiant')->unique();
-            $table->string('password');
+        Schema::table('atelier', function (Blueprint $table) {
             $table->boolean('actif')->default(true);
-            $table->enum('role', ['jeune', 'entreprise','manager','admin','superadmin']);
-            $table->rememberToken();
-            $table->timestamps();
         });
     }
 
@@ -27,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::table('atelier', function (Blueprint $table) {
+            //
+        });
     }
 };

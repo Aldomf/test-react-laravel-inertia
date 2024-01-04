@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('user_job_offer', function (Blueprint $table) {
             $table->id();
-            $table->string('identifiant')->unique();
-            $table->string('password');
-            $table->boolean('actif')->default(true);
-            $table->enum('role', ['jeune', 'entreprise','manager','admin','superadmin']);
-            $table->rememberToken();
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('job_offer_id');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('job_offer_id')->references('id')->on('joboffer')->onDelete('cascade');
         });
     }
 
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('user_job_offer');
     }
 };
