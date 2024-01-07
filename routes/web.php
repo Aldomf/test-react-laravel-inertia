@@ -7,6 +7,7 @@ use Inertia\Inertia;
 
 // Pour le back
 use App\Http\Controllers\FrontController;
+use App\Http\Controllers\CandidatController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,11 @@ use App\Http\Controllers\FrontController;
 // Route::get('/nos-missions', function () {
 //     return Inertia::render('NosMissions');
 // })->name('nosMissions');
+
+Route::controller(CandidatController::class)->group(function () {
+    Route::get('/admin/registerCandidat','index')->name('admin.registerCandidat');
+    Route::post('/admin/registerCandidat', 'register')->name('admin.registerCandidat.post');
+});
 
 Route::controller(FrontController::class)->group(function () {
     Route::get('/','Accueil')->name('home');
